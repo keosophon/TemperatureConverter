@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Convert Temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/txtTitle"
+        android:gravity="center"
+        android:background="#fff90000"
+        android:textColor="#ffffffff"
+        android:textSize="75px"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Value To Convert:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:textSize="50px"
+        android:gravity="center"
+        android:layout_marginTop="50px"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/txtInputValue" />
+    
+    <Button
+        android:text="Celsius To Fahrenheit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCelToFah" 
+        android:textSize="50px"
+        android:layout_marginTop="50px"/>
+
+    <Button
+        android:text="Fahrenheit To Celsius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnFahToCel" 
+        android:textSize="50px"/>
+
+</LinearLayout>

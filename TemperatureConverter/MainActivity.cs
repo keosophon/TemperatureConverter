@@ -36,14 +36,14 @@ namespace TemperatureConverter
         {
             // Convert Fahrenheit To Celsius
 
-            inputValue = inputHandling();
+            inputValue = inputHandler();
             if (double.IsNaN(inputValue))
             {
-                displayProperMessage();
+                displayInputErrorMessage();
             }
             else
             {
-                result = Calculation(inputValue, "FahToCel");
+                result = (inputValue - 32) * 5 / 9;
                 displayResult(result);
             }
         }
@@ -52,19 +52,19 @@ namespace TemperatureConverter
         {
             // Convert Celsius To Fahrenheit
 
-            inputValue = inputHandling();
+            inputValue = inputHandler();
             if (double.IsNaN(inputValue))
             {
-                displayProperMessage();
+                displayInputErrorMessage();
             }
             else
             {
-                result = Calculation(inputValue, "CelToFah");
+                result = (inputValue * 1.8) + 32;
                 displayResult(result);
             }
         }
 
-        private double inputHandling()
+        private double inputHandler()
         {
             //input error handling such as no input from user
 
@@ -78,7 +78,7 @@ namespace TemperatureConverter
             }
         }
 
-        private void displayProperMessage()
+        private void displayInputErrorMessage()
         {
             Toast.MakeText(context: this, text: "Please enter a proper value", duration: ToastLength.Long).Show();
         }
@@ -87,21 +87,6 @@ namespace TemperatureConverter
             Toast.MakeText(context: this, text: "The result is " + result, duration: ToastLength.Long).Show();
         }
        
-        private double Calculation(double inputValue, string type)
-        {
-            // Converter logic
-            
-            if (type == "CelToFah")
-            {
-                result = (inputValue * 1.8) + 32;
-            }
-            else
-            {
-                //Fah to Cel
-                result = (inputValue -32) * 5/9;
-            }
-            return result;
-        }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
